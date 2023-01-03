@@ -1,10 +1,24 @@
 <style>
-    .vertical-center {
+    .center {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  text-align: center;
 }
 </style>
-<button class="vertical-center">Charges</button>
+<h2 id="text">You are not pressing charges.</h2>
+<button id="buton" class="center">Charges</button>
+<script>
+    function checkState(){
+        var button = document.getElementById("buton");
+        if(button.ariaPressed==true){
+            document.getElementById("text").innerHTML = "You are pressing charges.";
+        }
+        if(button.ariaPressed==false){
+            document.getElementById("text").innerHTML = "You are not pressing charges.";
+        }
+    }
+    setInterval(checkState,50);
+</script>
