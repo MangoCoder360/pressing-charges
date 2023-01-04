@@ -32,11 +32,21 @@ html{
 </style>
 <h2 style="text-align:center;" id="dez">You have pressed 0 charges</h2>
 <button onclick="nus()" class="center">Charges</button>
+<progress style="text-align:center;position:fixed;bottom:0px;" id="bar" value="0" min="0" max="30"></progress>
 <h3 style="position:fixed;bottom:0px;font-family: sans-serif;">Website made by Reuben Schiopu</h3>
 <script>
   var count = 0;
+  var count2 = 0;
   function nus(){
     count++;
+    count2++;
+    document.getElementById("bar").value = count2;
     document.getElementById("dez").innerHTML = "You have pressed "+count+" charges";
+    if(count2 > 30){
+      count2 = 0;
+      count += 10;
+      document.getElementById("bar").value = count2;
+      document.getElementById("dez").innerHTML = "You have pressed "+count+" charges";
+    }
   }
 </script>
