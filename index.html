@@ -27,7 +27,16 @@ top: 50.5%;
 }
 html{
   background: linear-gradient(324deg, rgba(29,140,0,1) 0%, rgba(190,195,255,1) 50%, rgba(255,188,0,1) 100%);
+  font-family: sans-serif;
 }
 </style>
-<button class="center">Charges</button>
+<h2 id="dez">You have pressed 0 charges</h2>
+<button onclick="nus()" class="center">Charges</button>
 <h3 style="position:fixed;bottom:0px;font-family: sans-serif;">Website made by Reuben Schiopu</h3>
+<script>
+  var count = 0;
+  function nus(){
+    count++;
+    document.getElementById("dez").innerHTML = "You have pressed "+count+" charges";
+  }
+</script>
